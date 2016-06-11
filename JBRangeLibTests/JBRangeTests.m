@@ -29,4 +29,18 @@
     XCTAssertEqualObjects(self.subject.endIndex, @2);
 }
 
+- (void)testEnumeration {
+    self.subject = [[JBRange alloc] initWithStartIndex:0 endIndex:9];
+    
+    NSMutableSet *expectedValues = [NSMutableSet setWithArray:@[@0, @1, @2, @3, @4, @5, @6, @7, @8, @9]];
+    
+    
+    for (NSNumber *index in self.subject) {
+        XCTAssertTrue([expectedValues containsObject:index]);
+        [expectedValues removeObject:index];
+    }
+    
+    XCTAssertEqual(expectedValues.count, 0);
+}
+
 @end

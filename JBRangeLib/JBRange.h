@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JBRange : NSObject
+@interface JBRange : NSObject <NSFastEnumeration>
 
 @property (nonatomic, readonly) NSNumber *startIndex;
 @property (nonatomic, readonly) NSNumber *endIndex;
