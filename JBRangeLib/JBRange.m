@@ -44,7 +44,7 @@
     if (state->extra[1] == 0) {
         state->extra[1] = 1;
         state->state = _i_startIndex;
-        state->mutationsPtr = &state->extra[0];
+        state->mutationsPtr = state->extra;
         state->itemsPtr = buffer;
     }
     
