@@ -70,4 +70,8 @@
     return range.startIndex == self.startIndex && range.endIndex == self.endIndex;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return [[JBRange allocWithZone:zone] initWithStartIndex:_i_startIndex endIndex:_i_endIndex];
+}
+
 @end

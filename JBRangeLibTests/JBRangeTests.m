@@ -60,4 +60,11 @@
     XCTAssertNotEqualObjects(subject, reallyShouldNotEqualSubject);
 }
 
+- (void)testCopying {
+    JBRange *subject = [[JBRange alloc] initWithStartIndex:0 endIndex:123];
+    JBRange *copy = [subject copy];
+    
+    XCTAssertEqualObjects(subject, copy);
+}
+
 @end
