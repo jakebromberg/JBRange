@@ -45,9 +45,9 @@
         state->extra[1] = 1;
         state->state = _i_startIndex;
         state->mutationsPtr = &state->extra[0];
+        state->itemsPtr = buffer;
     }
     
-    state->itemsPtr = buffer;
 
     NSInteger numIterations = MIN(_i_endIndex - state->state + 1, len);
     NSInteger maxIndex = numIterations + state->state;
