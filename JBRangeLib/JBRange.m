@@ -18,6 +18,10 @@
 @implementation JBRange
 
 - (instancetype)initWithStartIndex:(NSInteger)startIndex endIndex:(NSInteger)endIndex {
+    if (startIndex > endIndex) {
+        return nil;
+    }
+    
     self = [super init];
     
     if (self != nil) {

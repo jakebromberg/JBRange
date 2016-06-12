@@ -60,4 +60,10 @@
     XCTAssertEqualObjects(subject, copy);
 }
 
+- (void)testInvalidInitParams {
+    JBRange *subject = [[JBRange alloc] initWithStartIndex:1 endIndex:0];
+    
+    XCTAssertNil(subject);
+}
+
 @end

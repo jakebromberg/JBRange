@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface JBRange : NSObject <NSFastEnumeration, NSCopying>
 
 @property (nonatomic, readonly) NSNumber *startIndex;
 @property (nonatomic, readonly) NSNumber *endIndex;
 
-- (instancetype)initWithStartIndex:(NSInteger)startIndex endIndex:(NSInteger)endIndex NS_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithStartIndex:(NSInteger)startIndex endIndex:(NSInteger)endIndex NS_DESIGNATED_INITIALIZER;
 - (instancetype)init NS_UNAVAILABLE;
 
 @end
+
+NS_ASSUME_NONNULL_END
