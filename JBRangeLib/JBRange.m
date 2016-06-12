@@ -41,10 +41,6 @@
 }
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id  _Nonnull *)buffer count:(NSUInteger)len {
-    if (state->state >= _i_endIndex) {
-        return 0;
-    }
-    
     if (state->extra[1] == 0) {
         state->extra[1] = 1;
         state->state = _i_startIndex;
