@@ -60,4 +60,14 @@
     return len - numReps;
 }
 
+- (BOOL)isEqual:(id)object {
+    if (![object isKindOfClass:[self class]]) {
+        return NO;
+    }
+    
+    JBRange *range = (JBRange *)object;
+    
+    return range.startIndex == self.startIndex && range.endIndex == self.endIndex;
+}
+
 @end

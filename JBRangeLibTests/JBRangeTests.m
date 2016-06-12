@@ -48,4 +48,16 @@
     XCTAssertEqual(expectedIndex - 1, endIndex);
 }
 
+- (void)testEquality {
+    JBRange *subject = [[JBRange alloc] initWithStartIndex:0 endIndex:123];
+    JBRange *shouldEqualSubject = [[JBRange alloc] initWithStartIndex:0 endIndex:123];
+    JBRange *shouldNotEqualSubject = [[JBRange alloc] initWithStartIndex:0 endIndex:999];
+    
+    XCTAssertEqualObjects(subject, shouldEqualSubject);
+    XCTAssertNotEqualObjects(subject, shouldNotEqualSubject);
+    
+    NSObject *reallyShouldNotEqualSubject = [[NSObject alloc] init];
+    XCTAssertNotEqualObjects(subject, reallyShouldNotEqualSubject);
+}
+
 @end
