@@ -32,13 +32,7 @@
     return self;
 }
 
-- (NSNumber *)startIndex {
-    return @(_i_startIndex);
-}
-
-- (NSNumber *)endIndex {
-    return @(_i_endIndex);
-}
+#pragma mark NSFastEnumeration
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id  _Nonnull *)buffer count:(NSUInteger)len {
     if (state->extra[1] == 0) {
@@ -59,6 +53,8 @@
     return numIterations;
 }
 
+#pragma mark Equality
+
 - (BOOL)isEqual:(id)object {
     if (![object isKindOfClass:[self class]]) {
         return NO;
@@ -66,11 +62,23 @@
     
     JBRange *range = (JBRange *)object;
     
-    return range.startIndex == self.startIndex && range.endIndex == self.endIndex;
+    return range->_i_startIndex == self->_i_startIndex && range->_i_endIndex == self->_i_endIndex;
 }
+
+#pragma mark NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
     return [[JBRange allocWithZone:zone] initWithStartIndex:_i_startIndex endIndex:_i_endIndex];
+}
+
+#pragma mark Properties
+
+- (NSNumber *)startIndex {
+    return @(_i_startIndex);
+}
+
+- (NSNumber *)endIndex {
+    return @(_i_endIndex);
 }
 
 @end
