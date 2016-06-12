@@ -49,19 +49,20 @@
         state->extra[1] = 1;
         state->state = _i_startIndex;
     }
-
+    
     state->itemsPtr = buffer;
 
-    NSInteger numReps = len;
+    NSInteger numIterations = MIN(_i_endIndex - state->state + 1, len);
+    NSInteger maxIndex = numIterations + state->state;
     
-    for (; (state->state <= _i_endIndex) && (numReps > 0); state->state++) {
+    
+    for (; state->state < maxIndex; state->state++) {
         *buffer++ = @(state->state);
-        numReps--;
     }
     
     state->mutationsPtr = &state->extra[0];
     
-    return len - numReps;
+    return numIterations;
 }
 
 - (BOOL)isEqual:(id)object {
