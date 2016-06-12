@@ -8,12 +8,6 @@
 
 #import "JBRange.h"
 
-@interface JBRange ()
-
-@property (nonatomic, strong) NSMutableArray *indexes;
-
-@end
-
 @implementation JBRange
 
 - (instancetype)initWithStartIndex:(NSInteger)startIndex endIndex:(NSInteger)endIndex {
@@ -28,20 +22,27 @@
 }
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id  _Nonnull *)buffer count:(NSUInteger)len {
-    return [self.indexes countByEnumeratingWithState:state objects:buffer count:len];
-}
-
-
-- (NSArray *)indexes {
-    if (!_indexes) {
-        _indexes = [NSMutableArray array];
-        
-        for(NSInteger index = _startIndex.intValue; index <= _endIndex.intValue; index++) {
-            [_indexes addObject:@(index)];
-        }
+    if (state->state >= _endIndex.intValue) {
+        return 0;
     }
     
-    return _indexes;
+    if (state->extra[1] == 0) {
+        state->extra[1] = 1;
+        state->state = _startIndex.intValue;
+    }
+
+    state->itemsPtr = buffer;
+
+    NSInteger numReps = len;
+    
+    for (; (state->state <= _endIndex.intValue) && (numReps > 0); state->state++) {
+        *buffer++ = @(state->state);
+        numReps--;
+    }
+    
+    state->mutationsPtr = &state->extra[0];
+    
+    return len - numReps;
 }
 
 @end

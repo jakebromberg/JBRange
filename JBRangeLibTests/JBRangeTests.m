@@ -30,17 +30,21 @@
 }
 
 - (void)testEnumeration {
-    self.subject = [[JBRange alloc] initWithStartIndex:0 endIndex:9];
+    NSTimeInterval time = [NSDate timeIntervalSinceReferenceDate];
+    NSInteger startIndex = 1;
+    NSInteger endIndex = 10000000;
+    self.subject = [[JBRange alloc] initWithStartIndex:startIndex endIndex:endIndex];
     
-    NSMutableSet *expectedValues = [NSMutableSet setWithArray:@[@0, @1, @2, @3, @4, @5, @6, @7, @8, @9]];
-    
+    NSInteger expectedIndex = startIndex;
     
     for (NSNumber *index in self.subject) {
-        XCTAssertTrue([expectedValues containsObject:index]);
-        [expectedValues removeObject:index];
+        XCTAssertEqual(expectedIndex, index.integerValue);
+        expectedIndex++;
     }
     
-    XCTAssertEqual(expectedValues.count, 0);
+    NSLog(@"%@", @([NSDate timeIntervalSinceReferenceDate] - time));
+
+    XCTAssertEqual(expectedIndex - 1, endIndex);
 }
 
 @end
