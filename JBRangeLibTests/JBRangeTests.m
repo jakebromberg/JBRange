@@ -11,22 +11,15 @@
 
 @interface JBRangeTests : XCTestCase
 
-@property (nonatomic, strong) JBRange *subject;
-
 @end
 
 @implementation JBRangeTests
 
-- (void)setUp {
-    [super setUp];
-    
-}
-
 - (void)testInitialization {
-    self.subject = [[JBRange alloc] initWithStartIndex:1 endIndex:2];
+    JBRange *subject = [[JBRange alloc] initWithStartIndex:1 endIndex:2];
     
-    XCTAssertEqualObjects(self.subject.startIndex, @1);
-    XCTAssertEqualObjects(self.subject.endIndex, @2);
+    XCTAssertEqualObjects(subject.startIndex, @1);
+    XCTAssertEqualObjects(subject.endIndex, @2);
 }
 
 - (void)testEnumeration {
@@ -34,11 +27,11 @@
 
     NSInteger startIndex = 1;
     NSInteger endIndex = 10000000;
-    self.subject = [[JBRange alloc] initWithStartIndex:startIndex endIndex:endIndex];
+    JBRange *subject = [[JBRange alloc] initWithStartIndex:startIndex endIndex:endIndex];
     
     NSInteger expectedIndex = startIndex;
     
-    for (NSNumber *index in self.subject) {
+    for (NSNumber *index in subject) {
         XCTAssertEqual(expectedIndex, index.integerValue);
         expectedIndex++;
     }
