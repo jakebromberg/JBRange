@@ -31,6 +31,7 @@
 
 - (void)testEnumeration {
     NSTimeInterval time = [NSDate timeIntervalSinceReferenceDate];
+
     NSInteger startIndex = 1;
     NSInteger endIndex = 10000000;
     self.subject = [[JBRange alloc] initWithStartIndex:startIndex endIndex:endIndex];

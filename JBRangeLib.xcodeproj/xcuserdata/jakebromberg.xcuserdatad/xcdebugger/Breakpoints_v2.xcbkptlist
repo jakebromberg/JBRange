@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JBRangeLibTests/JBRangeTests.m"
+            timestampString = "487524174.742817"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-testEnumeration"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[JBRangeTests testEnumeration]"
+                  moduleName = "JBRangeLibTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jakebromberg/Desktop/JBRangeLib/JBRangeLibTests/JBRangeTests.m"
+                  timestampString = "487524176.90529"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1567">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[JBRangeTests testEnumeration]"
+                  moduleName = "JBRangeLibTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jakebromberg/Desktop/JBRangeLib/JBRangeLibTests/JBRangeTests.m"
+                  timestampString = "487524176.905503"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1619">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[JBRangeTests testEnumeration]"
+                  moduleName = "JBRangeLibTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jakebromberg/Desktop/JBRangeLib/JBRangeLibTests/JBRangeTests.m"
+                  timestampString = "487524176.905741"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "3354">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[JBRangeTests testEnumeration]"
+                  moduleName = "JBRangeLibTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jakebromberg/Desktop/JBRangeLib/JBRangeLibTests/JBRangeTests.m"
+                  timestampString = "487524176.905989"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "3436">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[JBRangeTests testEnumeration]"
+                  moduleName = "JBRangeLibTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jakebromberg/Desktop/JBRangeLib/JBRangeLibTests/JBRangeTests.m"
+                  timestampString = "487524176.906155"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "3573">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
