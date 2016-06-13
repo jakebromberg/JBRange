@@ -49,12 +49,8 @@ static unsigned long unitDistance;
         state->mutationsPtr = state->extra;
         state->itemsPtr = buffer;
     }
-    
-    if (_endIndex <= state->state) {
-        return 0;
-    }
 
-    NSInteger numIterations = MIN(_endIndex - state->state, len);
+    NSInteger numIterations = MIN((_endIndex - state->state) / unitDistance, len);
     NSInteger maxIndex = state->state + numIterations * unitDistance;
     
     for (NSInteger i = state->state; i < maxIndex; i += unitDistance) {

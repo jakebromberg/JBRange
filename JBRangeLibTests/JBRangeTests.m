@@ -38,7 +38,7 @@
     
     NSLog(@"%@", @([NSDate timeIntervalSinceReferenceDate] - time));
 
-    XCTAssertEqual(expectedIndex - 1, endIndex);
+    XCTAssertEqual(expectedIndex, endIndex);
 }
 
 - (void)testEquality {
