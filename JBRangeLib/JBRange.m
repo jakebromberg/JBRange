@@ -20,16 +20,15 @@
 static unsigned long zero;
 static unsigned long unitDistance;
 
++ (void)initialize {
+    zero = (unsigned long)@0;
+    unitDistance = (unsigned long)@1 - zero;
+}
+
 - (instancetype)initWithStartIndex:(NSInteger)startIndex endIndex:(NSInteger)endIndex {
     if (startIndex > endIndex) {
         return nil;
     }
-    
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        zero = (unsigned long)@0;
-        unitDistance = (unsigned long)@1 - zero;
-    });
 
     self = [super init];
     
