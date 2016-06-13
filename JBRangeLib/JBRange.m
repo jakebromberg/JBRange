@@ -8,10 +8,10 @@
 
 #import "JBRange.h"
 
-@interface JBRange ()
-
-@property (nonatomic, assign) NSInteger i_startIndex;
-@property (nonatomic, assign) NSInteger i_endIndex;
+@interface JBRange () {
+    NSInteger _startIndex;
+    NSInteger _endIndex;
+}
 
 @end
 
@@ -34,8 +34,8 @@ static unsigned long unitDistance;
     self = [super init];
     
     if (self != nil) {
-        _i_startIndex = startIndex * unitDistance + zero;
-        _i_endIndex = endIndex * unitDistance + zero;
+        _startIndex = startIndex * unitDistance + zero;
+        _endIndex = endIndex * unitDistance + zero;
     }
     
     return self;
@@ -46,16 +46,16 @@ static unsigned long unitDistance;
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id  _Nonnull *)buffer count:(NSUInteger)len {
     
     if (state->state == 0) {
-        state->state = _i_startIndex;
+        state->state = _startIndex;
         state->mutationsPtr = state->extra;
         state->itemsPtr = buffer;
     }
     
-    if (_i_endIndex <= state->state) {
+    if (_endIndex <= state->state) {
         return 0;
     }
 
-    NSInteger numIterations = MIN(_i_endIndex - state->state, len);
+    NSInteger numIterations = MIN(_endIndex - state->state, len);
     NSInteger maxIndex = state->state + numIterations * unitDistance;
     
     for (NSInteger i = state->state; i < maxIndex; i += unitDistance) {
@@ -76,25 +76,25 @@ static unsigned long unitDistance;
     
     JBRange *range = (JBRange *)object;
     
-    return range->_i_startIndex == self->_i_startIndex && range->_i_endIndex == self->_i_endIndex;
+    return range->_startIndex == self->_startIndex && range->_endIndex == self->_endIndex;
 }
 
 #pragma mark NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
-    NSInteger startIndex = (_i_startIndex - zero) / unitDistance;
-    NSInteger endIndex = (_i_endIndex - zero) / unitDistance;
+    NSInteger startIndex = (_startIndex - zero) / unitDistance;
+    NSInteger endIndex = (_endIndex - zero) / unitDistance;
     return [[JBRange allocWithZone:zone] initWithStartIndex:startIndex endIndex:endIndex];
 }
 
 #pragma mark Properties
 
 - (NSNumber *)startIndex {
-    return (id)_i_startIndex;
+    return (id)_startIndex;
 }
 
 - (NSNumber *)endIndex {
-    return (id)_i_endIndex;
+    return (id)_endIndex;
 }
 
 @end
