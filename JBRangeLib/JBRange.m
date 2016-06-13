@@ -45,8 +45,7 @@ static unsigned long unitDistance;
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id  _Nonnull *)buffer count:(NSUInteger)len {
     
-    if (state->extra[1] == 0) {
-        state->extra[1] = 1;
+    if (state->state == 0) {
         state->state = _i_startIndex;
         state->mutationsPtr = state->extra;
         state->itemsPtr = buffer;
