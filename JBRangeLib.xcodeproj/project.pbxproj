@@ -11,8 +11,8 @@
 		346E48BE1D0B601200765DF0 /* JBRangeLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 346E48B31D0B601200765DF0 /* JBRangeLib.framework */; };
 		346E48C31D0B601200765DF0 /* JBRangeLibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 346E48C21D0B601200765DF0 /* JBRangeLibTests.m */; };
 		346E48CF1D0B602800765DF0 /* JBRange.h in Headers */ = {isa = PBXBuildFile; fileRef = 346E48CD1D0B602800765DF0 /* JBRange.h */; };
-		346E48D01D0B602800765DF0 /* JBRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 346E48CE1D0B602800765DF0 /* JBRange.m */; };
-		346E48D11D0B602800765DF0 /* JBRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 346E48CE1D0B602800765DF0 /* JBRange.m */; };
+		346E48D01D0B602800765DF0 /* JBRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 346E48CE1D0B602800765DF0 /* JBRange.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		346E48D11D0B602800765DF0 /* JBRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 346E48CE1D0B602800765DF0 /* JBRange.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		346E48D31D0B603E00765DF0 /* JBRangeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 346E48D21D0B603E00765DF0 /* JBRangeTests.m */; };
 /* End PBXBuildFile section */
 
@@ -390,6 +390,7 @@
 				346E48C91D0B601200765DF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		346E48CA1D0B601200765DF0 /* Build configuration list for PBXNativeTarget "JBRangeLibTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +399,7 @@
 				346E48CC1D0B601200765DF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

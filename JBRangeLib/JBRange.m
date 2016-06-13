@@ -35,19 +35,30 @@
 #pragma mark NSFastEnumeration
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id  _Nonnull *)buffer count:(NSUInteger)len {
+    static void *zero;
+    static char distance;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        zero = (__bridge void *)(@0);
+        distance = (__bridge void *)(@1) - zero;
+    });
+    
     if (state->extra[1] == 0) {
         state->extra[1] = 1;
-        state->state = _i_startIndex;
+        state->state = _i_startIndex * distance + zero;
         state->mutationsPtr = state->extra;
         state->itemsPtr = buffer;
     }
     
+    if ((_i_endIndex * distance + zero) <= state->state) {
+        return 0;
+    }
 
-    NSInteger numIterations = MIN(_i_endIndex - state->state + 1, len);
-    NSInteger maxIndex = numIterations + state->state;
+    NSInteger numIterations = MIN((_i_endIndex * distance + zero) - state->state, len);
     
-    for (; state->state < maxIndex; state->state++) {
-        *buffer++ = @(state->state);
+    for (NSInteger i = 0; i < numIterations; state->state+=distance, i++) {
+        *buffer++ = (id _Nonnull)(state->state);
     }
     
     return numIterations;
