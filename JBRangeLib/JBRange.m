@@ -27,8 +27,8 @@ static unsigned long unitDistance;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        zero = (unsigned long)(__bridge void *)(@0);
-        unitDistance = (unsigned long)(__bridge void *)(@1) - zero;
+        zero = (unsigned long)@0;
+        unitDistance = (unsigned long)@1 - zero;
     });
 
     self = [super init];
@@ -60,7 +60,7 @@ static unsigned long unitDistance;
     NSInteger maxIndex = state->state + numIterations * unitDistance;
     
     for (NSInteger i = state->state; i < maxIndex; i += unitDistance) {
-        *buffer++ = (id _Nonnull)i;
+        *buffer++ = (id)i;
     }
     
     state->state = maxIndex;
