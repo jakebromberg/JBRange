@@ -9,8 +9,8 @@
 #import "JBRange.h"
 
 @interface JBRange () {
-    NSInteger _startIndex;
-    NSInteger _endIndex;
+    NSUInteger _startIndex;
+    NSUInteger _endIndex;
 }
 
 @end
@@ -25,7 +25,7 @@ static unsigned long unitDistance;
     unitDistance = (unsigned long)@1 - zero;
 }
 
-- (instancetype)initWithStartIndex:(NSInteger)startIndex endIndex:(NSInteger)endIndex {
+- (instancetype)initWithStartIndex:(NSUInteger)startIndex endIndex:(NSUInteger)endIndex {
     if (startIndex > endIndex) {
         return nil;
     }
@@ -50,10 +50,10 @@ static unsigned long unitDistance;
         state->itemsPtr = buffer;
     }
 
-    NSInteger numIterations = MIN((_endIndex - state->state) / unitDistance, len);
-    NSInteger maxIndex = state->state + numIterations * unitDistance;
+    NSUInteger numIterations = MIN((_endIndex - state->state) / unitDistance, len);
+    NSUInteger maxIndex = state->state + numIterations * unitDistance;
     
-    for (NSInteger i = state->state; i < maxIndex; i += unitDistance) {
+    for (NSUInteger i = state->state; i < maxIndex; i += unitDistance) {
         *buffer++ = (id)i;
     }
     
@@ -77,8 +77,8 @@ static unsigned long unitDistance;
 #pragma mark NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
-    NSInteger startIndex = (_startIndex - zero) / unitDistance;
-    NSInteger endIndex = (_endIndex - zero) / unitDistance;
+    NSUInteger startIndex = (_startIndex - zero) / unitDistance;
+    NSUInteger endIndex = (_endIndex - zero) / unitDistance;
     return [[JBRange allocWithZone:zone] initWithStartIndex:startIndex endIndex:endIndex];
 }
 

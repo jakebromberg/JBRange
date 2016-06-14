@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSNumber *startIndex;
 @property (nonatomic, readonly) NSNumber *endIndex;
 
-- (nullable instancetype)initWithStartIndex:(NSInteger)startIndex endIndex:(NSInteger)endIndex NS_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithStartIndex:(NSUInteger)startIndex endIndex:(NSUInteger)endIndex NS_DESIGNATED_INITIALIZER;
 - (instancetype)init NS_UNAVAILABLE;
 
 @end
